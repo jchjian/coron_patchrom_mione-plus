@@ -8994,69 +8994,6 @@
     goto :goto_0
 .end method
 
-.method static synthetic access$2300(Lcom/android/server/NotificationManagerService;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    iget v0, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationColor:I
-
-    return v0
-.end method
-
-.method static synthetic access$2302(Lcom/android/server/NotificationManagerService;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    iput p1, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationColor:I
-
-    return p1
-.end method
-
-.method static synthetic access$2400(Lcom/android/server/NotificationManagerService;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    iget v0, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationLedOn:I
-
-    return v0
-.end method
-
-.method static synthetic access$2402(Lcom/android/server/NotificationManagerService;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    iput p1, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationLedOn:I
-
-    return p1
-.end method
-
-.method static synthetic access$2500(Lcom/android/server/NotificationManagerService;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    iget v0, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationLedOff:I
-
-    return v0
-.end method
-
-.method static synthetic access$2502(Lcom/android/server/NotificationManagerService;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    iput p1, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationLedOff:I
-
-    return p1
-.end method
-
 .method private isBlockedPackage(Ljava/lang/String;ILandroid/app/Notification;)Z
     .locals 5
     .parameter "packageName"

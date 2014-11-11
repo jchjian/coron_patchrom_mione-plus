@@ -3910,17 +3910,6 @@
     return-object v0
 .end method
 
-.method static synthetic access$1000(Landroid/widget/TextView;)Landroid/content/Context;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 228
-    iget-object v0, p0, Landroid/widget/TextView;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
 .method static synthetic access$600(I)Z
     .locals 1
     .parameter "x0"
