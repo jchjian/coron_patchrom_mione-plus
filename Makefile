@@ -54,7 +54,7 @@ vendor_remove_dirs := app priv-app
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/pri-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BluetoothExt Stk ThemesProvider
+vendor_saved_apps := Bluetooth BluetoothExt Stk
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -105,7 +105,7 @@ vendor_modify_jars := framework framework2 pm services telephony-common android.
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode baidu system apk).
 #-----------------------------------------------------------------------------
-baidu_modify_apps := SettingsProvider Settings TeleService Keyguard SystemUI
+baidu_modify_apps := SettingsProvider Settings TeleService Keyguard SystemUI InCallUI
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the baidu framework jar.
