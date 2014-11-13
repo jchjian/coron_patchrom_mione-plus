@@ -1,0 +1,149 @@
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 5
+    .parameter "context"
+    .parameter "intent"
+
+    .prologue
+    const/4 v4, 0x1
+
+    .line 38
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 40
+    .local v0, action:Ljava/lang/String;
+    iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
+
+    #calls: Lcom/baidu/camera/CameraModuleHasFrontFacing;->getCurrStoragePath()Ljava/lang/String;
+    invoke-static {v2}, Lcom/baidu/camera/CameraModuleHasFrontFacing;->access$000(Lcom/baidu/camera/CameraModuleHasFrontFacing;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 41
+    .local v1, currStoragePath:Ljava/lang/String;
+    const-string v2, "sdcard"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 43
+    const-string v2, "android.intent.action.MEDIA_MOUNTED"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "android.intent.action.MEDIA_SCANNER_FINISHED"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    const-string v2, "android.intent.action.MEDIA_SCANNER_STARTED"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 44
+    :cond_0
+    iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
+
+    iget-object v2, v2, Lcom/baidu/camera/CameraModuleHasFrontFacing;->mActivity:Lcom/baidu/camera/CameraActivity;
+
+    const v3, 0x7f0e017d
+
+    invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+
+    .line 46
+    iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
+
+    iget-object v2, v2, Lcom/baidu/camera/CameraModuleHasFrontFacing;->mPreferenceGroup:Lcom/baidu/camera/PreferenceGroup;
+
+    const-string v3, "pref_camera_storage_path_key"
+
+    invoke-virtual {v2, v3}, Lcom/baidu/camera/PreferenceGroup;->findPreference(Ljava/lang/String;)Lcom/baidu/camera/ListPreference;
+
+    move-result-object v2
+
+    const-string v3, "sdcard"
+
+    invoke-virtual {v2, v3}, Lcom/baidu/camera/ListPreference;->setValue(Ljava/lang/String;)V
+
+    .line 47
+    iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
+
+    invoke-virtual {v2}, Lcom/baidu/camera/CameraModuleHasFrontFacing;->checkStoragePath()V
+
+    .line 48
+    iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
+
+    invoke-virtual {v2}, Lcom/baidu/camera/CameraModuleHasFrontFacing;->updateUI()V
+
+    .line 59
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 49
+    :cond_2
+    const-string v2, "android.intent.action.MEDIA_REMOVED"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    const-string v2, "android.intent.action.MEDIA_UNMOUNTED"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_3
+
+    const-string v2, "android.intent.action.MEDIA_BAD_REMOVAL"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 52
+    :cond_3
+    iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
+
+    iget-object v2, v2, Lcom/baidu/camera/CameraModuleHasFrontFacing;->mActivity:Lcom/baidu/camera/CameraActivity;
+
+    const v3, 0x7f0e017c
+
+    invoke-static {v2, v3, v4}, Landroid/widget/Toast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+
+    .line 53
+    iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
+
+    invoke-virtual {v2}, Lcom/baidu/camera/CameraModuleHasFrontFacing;->resetStorage()V
+
+    goto :goto_0
+.end method
+

@@ -1,0 +1,46 @@
+
+.method private getCurrStoragePath()Ljava/lang/String;
+    .locals 3
+
+    .prologue
+    .line 232
+    iget-object v0, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing;->mPreferences:Lcom/baidu/camera/ComboPreferences;
+
+    const-string v1, "pref_camera_storage_path_key"
+
+    const-string v2, "sdcard"
+
+    invoke-virtual {v0, v1, v2}, Lcom/baidu/camera/ComboPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public resetStorage()V
+    .locals 2
+
+    .prologue
+    .line 63
+    iget-object v0, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing;->mPreferenceGroup:Lcom/baidu/camera/PreferenceGroup;
+
+    const-string v1, "pref_camera_storage_path_key"
+
+    invoke-virtual {v0, v1}, Lcom/baidu/camera/PreferenceGroup;->findPreference(Ljava/lang/String;)Lcom/baidu/camera/ListPreference;
+
+    move-result-object v0
+
+    const-string v1, "sdcard"
+
+    invoke-virtual {v0, v1}, Lcom/baidu/camera/ListPreference;->setValue(Ljava/lang/String;)V
+
+    .line 64
+    invoke-virtual {p0}, Lcom/baidu/camera/CameraModuleHasFrontFacing;->checkStoragePath()V
+
+    .line 65
+    invoke-virtual {p0}, Lcom/baidu/camera/CameraModuleHasFrontFacing;->updateUI()V
+
+    .line 66
+    return-void
+.end method
+

@@ -13,5 +13,9 @@ elif [ "$apkBaseName" = "SystemUI" ];then
         echo ">>> in custom_app for $apkBaseName to adjust the field IccCardConstants$State;->NETWORK_LOCKED with IccCardConstants$State;->PERSO_LOCKED"
         find $tempSmaliDir/ -name "*.smali" | xargs sed -i 's#IccCardConstants$State;->NETWORK_LOCKED#IccCardConstants$State;->PERSO_LOCKED#g'
 
+elif [ "$apkBaseName" = "BaiduCamera" ];then
+        echo ">>> add parent for item TextAppearance.DialogWindowTitle in styles.xml"
+        sed -i 's#\"TextAppearance.DialogWindowTitle\"#\"TextAppearance.DialogWindowTitle\" parent=\"@*android:style\/TextAppearance\"#g' $tempSmaliDir/res/values/styles.xml
+
 fi
 
