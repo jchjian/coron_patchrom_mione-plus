@@ -17,5 +17,9 @@ elif [ "$apkBaseName" = "BaiduCamera" ];then
         echo ">>> add parent for item TextAppearance.DialogWindowTitle in styles.xml"
         sed -i 's#\"TextAppearance.DialogWindowTitle\"#\"TextAppearance.DialogWindowTitle\" parent=\"@*android:style\/TextAppearance\"#g' $tempSmaliDir/res/values/styles.xml
 
+elif [ "$apkBaseName" = "BaiduGallery3D" ];then
+        echo ">>> remove play video activity in BaiduGallery3D"
+        sed -i '/movie_view_label/,+35d' $tempSmaliDir/AndroidManifest.xml
+
 fi
 
