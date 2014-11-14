@@ -93,7 +93,7 @@ vendor_modify_jars := framework framework2 pm services telephony-common android.
 # The default value is nothing.
 # You can configure the baidu system apk name in the value.
 #-----------------------------------------------------------------------------
-baidu_remove_apps := Browser SoundRecorder
+baidu_remove_apps := Browser SoundRecorder qcrilmsgtunnel
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the baidu system apk.
@@ -116,7 +116,7 @@ baidu_modify_apps := SettingsProvider Settings TeleService Keyguard SystemUI InC
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode baidu system jar).
 #-----------------------------------------------------------------------------
-#baidu_modify_jars := android.policy
+baidu_modify_jars := framework-yi
 
 ##############################################################################
 # The value decides which property you will override in the build.prop.
