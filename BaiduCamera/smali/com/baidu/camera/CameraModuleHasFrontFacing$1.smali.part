@@ -59,6 +59,8 @@
     :cond_0
     iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
 
+    if-eqz v2, :cond_baidu_00
+
     iget-object v2, v2, Lcom/baidu/camera/CameraModuleHasFrontFacing;->mActivity:Lcom/baidu/camera/CameraActivity;
 
     const v3, 0x7f0e017d
@@ -69,6 +71,7 @@
 
     invoke-virtual {v2}, Landroid/widget/Toast;->show()V
 
+    :cond_baidu_00
     .line 46
     iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
 
