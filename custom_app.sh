@@ -21,5 +21,9 @@ elif [ "$apkBaseName" = "BaiduGallery3D" ];then
         echo ">>> remove play video activity in BaiduGallery3D"
         sed -i '/movie_view_label/,+35d' $tempSmaliDir/AndroidManifest.xml
 
+elif [ "$apkBaseName" = "InCallUI" ];then
+        echo ">>> fix the button cannot display complete when having call"
+        sed -i 's#2.0dip#30.0dip#g' $tempSmaliDir/res/layout/dialpad.xml
+
 fi
 
