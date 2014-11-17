@@ -72,21 +72,6 @@
     invoke-virtual {v2}, Landroid/widget/Toast;->show()V
 
     :cond_baidu_00
-    .line 46
-    iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
-
-    iget-object v2, v2, Lcom/baidu/camera/CameraModuleHasFrontFacing;->mPreferenceGroup:Lcom/baidu/camera/PreferenceGroup;
-
-    const-string v3, "pref_camera_storage_path_key"
-
-    invoke-virtual {v2, v3}, Lcom/baidu/camera/PreferenceGroup;->findPreference(Ljava/lang/String;)Lcom/baidu/camera/ListPreference;
-
-    move-result-object v2
-
-    const-string v3, "sdcard"
-
-    invoke-virtual {v2, v3}, Lcom/baidu/camera/ListPreference;->setValue(Ljava/lang/String;)V
-
     .line 47
     iget-object v2, p0, Lcom/baidu/camera/CameraModuleHasFrontFacing$1;->this$0:Lcom/baidu/camera/CameraModuleHasFrontFacing;
 

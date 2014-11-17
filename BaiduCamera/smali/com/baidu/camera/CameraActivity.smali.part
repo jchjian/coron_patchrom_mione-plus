@@ -1,0 +1,135 @@
+
+.method protected updateStorageHint(J)V
+    .locals 3
+    .parameter "storageSpace"
+
+    .prologue
+    .line 1289
+    const/4 v0, 0x0
+
+    .line 1290
+    .local v0, message:Ljava/lang/String;
+    const-wide/16 v1, -0x1
+
+    cmp-long v1, p1, v1
+
+    if-nez v1, :cond_2
+
+    .line 1291
+    const v1, 0x7f0e0036
+
+    invoke-virtual {p0, v1}, Lcom/baidu/camera/CameraActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1301
+    :cond_0
+    :goto_0
+    if-eqz v0, :cond_6
+
+    .line 1302
+    iget-object v1, p0, Lcom/baidu/camera/CameraActivity;->mStorageHint:Lcom/baidu/camera/OnScreenHint;
+
+    if-nez v1, :cond_5
+
+    .line 1303
+    invoke-static {p0, v0}, Lcom/baidu/camera/OnScreenHint;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;)Lcom/baidu/camera/OnScreenHint;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/baidu/camera/CameraActivity;->mStorageHint:Lcom/baidu/camera/OnScreenHint;
+
+    .line 1307
+    :goto_1
+    iget-object v1, p0, Lcom/baidu/camera/CameraActivity;->mStorageHint:Lcom/baidu/camera/OnScreenHint;
+
+    invoke-virtual {v1}, Lcom/baidu/camera/OnScreenHint;->show()V
+
+    .line 1312
+    :cond_1
+    :goto_2
+    return-void
+
+    .line 1293
+    :cond_2
+    const-wide/16 v1, -0x2
+
+    cmp-long v1, p1, v1
+
+    if-nez v1, :cond_3
+
+    .line 1294
+    const v1, 0x7f0e0037
+
+    invoke-virtual {p0, v1}, Lcom/baidu/camera/CameraActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 1295
+    :cond_3
+    const-wide/16 v1, -0x3
+
+    cmp-long v1, p1, v1
+
+    if-nez v1, :cond_4
+
+    .line 1296
+    const v1, 0x7f0e0038
+
+    invoke-virtual {p0, v1}, Lcom/baidu/camera/CameraActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 1297
+    :cond_4
+    const-wide/32 v1, 0x2faf080
+
+    cmp-long v1, p1, v1
+
+    if-gtz v1, :cond_7
+
+    .line 1298
+    const v1, 0x7f0e00a6
+
+    invoke-virtual {p0, v1}, Lcom/baidu/camera/CameraActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 1305
+    :cond_5
+    iget-object v1, p0, Lcom/baidu/camera/CameraActivity;->mStorageHint:Lcom/baidu/camera/OnScreenHint;
+
+    invoke-virtual {v1, v0}, Lcom/baidu/camera/OnScreenHint;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_1
+
+    .line 1308
+    :cond_6
+    iget-object v1, p0, Lcom/baidu/camera/CameraActivity;->mStorageHint:Lcom/baidu/camera/OnScreenHint;
+
+    if-eqz v1, :cond_1
+
+    .line 1309
+    iget-object v1, p0, Lcom/baidu/camera/CameraActivity;->mStorageHint:Lcom/baidu/camera/OnScreenHint;
+
+    invoke-virtual {v1}, Lcom/baidu/camera/OnScreenHint;->cancel()V
+
+    .line 1310
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lcom/baidu/camera/CameraActivity;->mStorageHint:Lcom/baidu/camera/OnScreenHint;
+
+    goto :goto_2
+
+    :cond_7
+    move-object v1, v0
+
+    goto :goto_0
+.end method
+
